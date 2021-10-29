@@ -14,7 +14,7 @@ const ExceptionMap = {
   403: Unauthorized
 }
 
-const Result = defineComponent({
+export default defineComponent({
   props: {
     status: {
       type: Number,
@@ -41,9 +41,6 @@ const Result = defineComponent({
     }
   }
 })
-
-export default Result
-
 </script>
 <style lang="scss" scoped>
 .result-component{

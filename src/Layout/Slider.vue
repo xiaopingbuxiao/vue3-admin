@@ -4,27 +4,27 @@
     <div class="layout-slider_top">
       <img class="logo" src="../assets/logo.png" alt srcset />
     </div>
-    <el-menu default-active="2" class="layout-slider_bottom" :collapse="collapse">
-      <el-sub-menu index="1">
+    <el-menu default-active="2" class="layout-slider_bottom"  :router="true" :collapse="collapse">
+      <el-sub-menu index="exception">
         <template #title>
           <i class="el-icon-location"></i>
-          <span>Navigator One</span>
+          <span>错误页面</span>
         </template>
         <el-menu-item-group title="Group One">
-          <el-menu-item index="1-1">item one</el-menu-item>
-          <el-menu-item index="1-2">item one</el-menu-item>
+          <el-menu-item index="/exception/404">404</el-menu-item>
+          <el-menu-item index="/exception/500">500</el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group title="Group Two">
-          <el-menu-item index="1-3">item three</el-menu-item>
+          <el-menu-item index="/exception/401">401</el-menu-item>
         </el-menu-item-group>
         <el-sub-menu index="1-4">
           <template #title>item four</template>
           <el-menu-item index="1-4-1">item one</el-menu-item>
         </el-sub-menu>
       </el-sub-menu>
-      <el-menu-item index="2">
+      <el-menu-item index="/about">
         <i class="el-icon-menu"></i>
-        <span>Navigator Two</span>
+        <span>about</span>
       </el-menu-item>
       <el-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
@@ -66,13 +66,14 @@ export default defineComponent({
     var(--el-transition-function-ease-in-out-bezier);
 
   &.active {
-    width: 210px;
+    width: 240px;
   }
 
   .layout-slider_top {
     height: 60px;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
     .logo {
       display: block;
       width: 48px;

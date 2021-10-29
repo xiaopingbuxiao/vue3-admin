@@ -6,20 +6,43 @@ const constantRouter = [{
   path: '/',
   name: 'Home',
   component: Layout,
+  redirect: '/home',
   children: [
     {
-      path: '/about',
+      path: 'about',
       name: 'About',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
       meta: {
-        title: 'about页面'
+        title: 'about页面',
+        roles: ['admin']
+      }
+    },
+    {
+      path: 'home',
+      name: 'Home',
+      component: () => import(/* webpackChunkName: "home" */ '../views/home/index.vue'),
+      meta: {
+        title: 'about页面',
+        roles: ['role1']
       }
     }
   ]
-}]
+},
+{
+  path: '/exception:(.*)*',
+  component: Layout,
+  children: [
+    {
+      path: '/:exception*',
+      name: 'Exception',
+      component: () => import(/* webpackChunkName: "Exception" */ '../views/exception/index.vue'),
+      meta: {
+        title: '错误页面'
+      }
+    }
+  ]
+}
+]
 
 /* 根据用户权限生成路由 */
 
