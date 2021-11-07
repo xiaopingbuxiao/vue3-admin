@@ -21,30 +21,34 @@
 </template>
 
 <script>
-import { createNamespacedHelpers, useStore } from 'vuex'
-import { defineComponent, toRefs } from 'vue'
-import { Fold } from '@element-plus/icons'
-const { mapMutations } = createNamespacedHelpers('globalState')
+import { createNamespacedHelpers, useStore, } from 'vuex'
+import { defineComponent, toRefs, ref, } from 'vue'
+import { Fold, } from '@element-plus/icons'
+import config from '../config'
+const { mapMutations, } = createNamespacedHelpers('globalState')
 
 export default defineComponent({
   setup () {
     const store = useStore()
-    const { collapse } = toRefs(store.state.globalState)
+    const { collapse, } = toRefs(store.state.globalState)
+
+    const env = ref(config.env)
 
     return {
+      env,
       collapse: collapse,
       circleUrl:
-        'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+        'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
     }
   },
   components: {
-    Fold
+    Fold,
   },
   methods: {
     ...mapMutations([
       'collapseToggle'
-    ])
-  }
+    ]),
+  },
 })
 
 </script>

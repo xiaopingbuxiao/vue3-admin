@@ -1,4 +1,4 @@
-import { createStore } from 'vuex'
+import { createStore, } from 'vuex'
 
 import globalState from './modules/globalState'
 
@@ -10,6 +10,6 @@ export default createStore({
   actions: {
   },
   modules: {
-    globalState
-  }
+    globalState,
+  },
 })

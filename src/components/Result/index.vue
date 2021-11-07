@@ -1,9 +1,9 @@
 
 <script>
 
-import { ElButton, ElSpace } from 'element-plus'
-import { defineComponent } from 'vue'
-import { useRouter } from 'vue-router'
+import { ElButton, ElSpace, } from 'element-plus'
+import { defineComponent, } from 'vue'
+import { useRouter, } from 'vue-router'
 import NotFound from './NotFound'
 import ServerError from './ServerError'
 import Unauthorized from './Unauthorized'
@@ -11,17 +11,18 @@ import Unauthorized from './Unauthorized'
 const ExceptionMap = {
   404: NotFound,
   500: ServerError,
-  403: Unauthorized
+  403: Unauthorized,
 }
 
 export default defineComponent({
+  name: 'Result',
   props: {
     status: {
       type: Number,
-      default: 500
-    }
+      default: 500,
+    },
   },
-  setup (props, { slots }) {
+  setup (props, { slots, }) {
     const routes = useRouter()
     return () => {
       const SVGComponent = ExceptionMap[props.status]
@@ -32,14 +33,14 @@ export default defineComponent({
             {
               slots.default
                 ? slots.default()
-                : <ElButton type="primary" onClick={() => routes.push({ path: '/' })}>返回首页</ElButton>
+                : <ElButton type="primary" onClick={() => routes.push({ path: '/', })}>返回首页</ElButton>
             }
           </ElSpace>
 
         </div>
       )
     }
-  }
+  },
 })
 </script>
 <style lang="scss" scoped>

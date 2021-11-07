@@ -2,18 +2,18 @@
 export default {
   namespaced: 'globalState',
   state: {
-    collapse: false
+    collapse: false,
 
   },
   mutations: {
     collapseToggle (state) {
       state.collapse = !state.collapse
-    }
+    },
   },
   actions: {
 
   },
   modules: {
 
-  }
+  },
 }

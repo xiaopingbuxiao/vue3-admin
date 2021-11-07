@@ -2,9 +2,9 @@
 <template>
   <el-aside :class="['layout-slider', { 'active': !collapse }]">
     <div class="layout-slider_top">
-      <img class="logo" src="../assets/logo.png" alt srcset />
+      <EnvTag></EnvTag>
     </div>
-    <el-menu default-active="2" class="layout-slider_bottom"  :router="true" :collapse="collapse">
+    <el-menu default-active="2" class="layout-slider_bottom" :router="true" :collapse="collapse">
       <el-sub-menu index="exception">
         <template #title>
           <i class="el-icon-location"></i>
@@ -40,17 +40,19 @@
 
 <script>
 
-import { defineComponent, toRefs } from 'vue'
-import { useStore } from 'vuex'
+import { defineComponent, toRefs, } from 'vue'
+import { useStore, } from 'vuex'
+import EnvTag from '@/Layout/components/EnvTag.vue'
 
 export default defineComponent({
   setup () {
     const store = useStore()
-    const { collapse } = toRefs(store.state.globalState)
+    const { collapse, } = toRefs(store.state.globalState)
     return {
-      collapse: collapse
+      collapse: collapse,
     }
-  }
+  },
+  components: { EnvTag, },
 })
 </script>
 

@@ -12,19 +12,19 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, } from 'vue'
 import Header from './Header.vue'
 import Slider from './Slider.vue'
 export default defineComponent({
   data () {
     return {
-      status: 404
+      status: 404,
     }
   },
   components: {
     Slider,
-    VHeader: Header
-  }
+    VHeader: Header,
+  },
 })
 </script>
 
