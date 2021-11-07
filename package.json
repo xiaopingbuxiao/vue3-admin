@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve --mode dev",
+    "build": "vue-cli-service build --mode prod",
+    "build:test": "vue-cli-service build --mode test",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "commit": "git add . && git-cz",
-    "changelog":"conventional-changelog -p -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p -i CHANGELOG.md -s"
   },
   "config": {
     "commitizen": {
@@ -17,6 +18,7 @@
   },
   "dependencies": {
     "@element-plus/icons": "^0.0.11",
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "element-plus": "^1.1.0-beta.20",
     "reset-css": "^5.0.1",
@@ -49,11 +51,13 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0",
     "husky": "^7.0.4",
+    "image-webpack-loader": "^8.0.1",
     "koa": "^2.13.4",
     "koa-logger": "^3.2.1",
     "mockjs": "^1.1.0",
     "nodemon": "^2.0.14",
     "sass": "^1.26.5",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "svg-sprite-loader": "^6.0.11"
   }
 }
