@@ -5,7 +5,6 @@ const components = files.keys().map(file => {
   const component = files(file).default
   return component
 })
-console.log(components)
 
 let installed = false
 

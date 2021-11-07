@@ -29,8 +29,10 @@ export default defineComponent({
 .svg-icon {
   width: 1em;
   height: 1em;
+  padding: 0 4px;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+  cursor: pointer;
 }
 </style>

@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory, } from 'vue-router'
 
 import Layout from '@/Layout/index'
 
-const Login = () => import(/* webpackChunkName: "login页面" */'../views/login/index.vue')
+const Login = () => import(/* webpackChunkName: "login" */'../views/login/index.vue')
 
 const About = () => import(/* webpackChunkName: "about" */ '../views/About.vue')
 
